@@ -10,7 +10,7 @@ new Vue({
     },
     computed: {
         rows: function () {
-            return Math.round(this.input.length / 50) || 1
+            return (Math.round(this.input.length / 50) + 3) || 1
         }
     },
     watch: {

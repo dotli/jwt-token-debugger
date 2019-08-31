@@ -1,2 +1,5 @@
 # jwt-token-debugger
-decode the json web token
+Debug the json web token raw value.
+
+# Screenshots
+[<img src="/jwt-debugger.png">](/jwt-debugger.png)

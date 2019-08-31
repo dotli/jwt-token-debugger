@@ -7,7 +7,12 @@
 <style>
     @media (min-width: 992px) {
         .input {
-            padding-right: 30px;
+            margin-right: 30px;
+            word-break: break-all;
+        }
+
+        pre {
+            margin-bottom: 0;
         }
     }
 </style>
@@ -27,8 +32,8 @@
                         <small class="text-muted">paste a token here</small>
                     </h3>
                 </div>
-                <div class="row input">
-                    <textarea class="form-control" v-model="input" :rows="rows"></textarea>
+                <div class="row">
+                    <textarea class="form-control input" v-model="input" :rows="rows"></textarea>
                 </div>
             </div>
             <div class="col col-12 col-lg-6">

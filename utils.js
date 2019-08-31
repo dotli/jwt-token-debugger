@@ -68,7 +68,10 @@ function format(json, options) {
         reg = /\:/g;
         json = json.replace(reg, ': ');
     }
-    json.split('\r\n').forEach(function (node) {
+    var lines = json.split('\r\n');
+    var endLine = lines.length - 1;
+    lines.forEach(function (node, index) {
+        if (!node) { return; }
         var i = 0,
             indent = 0,
             padding = '';
@@ -87,8 +90,11 @@ function format(json, options) {
             padding += PADDING;
         }
 
-        formatted += padding + node + '\r\n';
         pad += indent;
+        formatted += padding + node;
+        if (index < endLine) {
+            formatted += '\r\n';
+        }
     });
 
     return formatted;
