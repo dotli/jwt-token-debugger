@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    @media (min-width: 992px) {
+        .input {
+            padding-right: 30px;
+        }
+    }
+</style>
+<title>JSON Web Tokens</title>
+</head>
+
+<body>
+    <div id="app" class="container-fluid mx-auto p-5" style="max-width: 1000px;">
+        <div class="row">
+            <h1>JWT Debugger</h1>
+        </div>
+        <div class="row">
+            <div class="col col-12 col-lg-6">
+                <div class="row">
+                    <h3>
+                        Encoded
+                        <small class="text-muted">paste a token here</small>
+                    </h3>
+                </div>
+                <div class="row input">
+                    <textarea class="form-control" v-model="input" :rows="rows"></textarea>
+                </div>
+            </div>
+            <div class="col col-12 col-lg-6">
+                <div class="row">
+                    <h3>
+                        Decoded
+                        <small class="text-muted">payload and signature</small>
+                    </h3>
+                </div>
+                <div class="row">
+                    <div class="card col col-12 px-0">
+                        <div class="card-header">
+                            HEADER:<span class="text-muted ml-1">ALGORITHM & TOKEN TYPE</span>
+                        </div>
+                        <div class="card-body">
+                            <pre><code>{{output.header}}</code></pre>
+                        </div>
+                    </div>
+                    <div class="card col col-12 px-0">
+                        <div class="card-header">
+                            PAYLOAD:<span class="text-muted ml-1">DATA</span>
+                        </div>
+                        <div class="card-body">
+                            <pre><code>{{output.playload}}</code></pre>
+                        </div>
+                    </div>
+                    <div class="card col col-12 px-0">
+                        <div class="card-header">
+                            SIGNATURE
+                        </div>
+                        <div class="card-body">
+                            <code>{{output.signature}}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+</body>
